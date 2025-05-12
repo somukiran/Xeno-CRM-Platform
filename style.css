@@ -1,0 +1,27 @@
+.toast {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 1rem;
+        z-index: 1000;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      }
+
+      .toast-warning {
+        background-color: #f39c12;
+      }
+
+      .toast-error {
+        background-color: #e74c3c;
+      }
+
+      .toast.fade-out {
+        opacity: 0;
+        transform: translateY(20px);
+      }

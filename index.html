@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xeno CRM Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-gray-100 font-inter">
+    <div class="container mx-auto p-6">
+      <h1 class="text-3xl font-semibold text-blue-600 text-center mb-8">Xeno CRM Platform</h1>
+
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Customer Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <input
+            type="text"
+            id="customerName"
+            placeholder="Customer Name"
+            class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="email"
+            id="customerEmail"
+            placeholder="Customer Email"
+            class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="text"
+            id="customerSegment"
+            placeholder="Customer Segment"
+            class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="phone"
+            id="customerPhoneNumber"
+            placeholder="Customer Phone Number"
+            class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button id="addCustomer" class="bg-green-500 hover:bg-green-700 text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-400 text-align:center">
+            Add Customer
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full leading-normal shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">ID</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Name</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Email</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Mobile</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Segment</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="customerTableBody" class="bg-white">
+              <tr>
+                <td colspan="5" class="px-5 py-5 border-b border-gray-200 text-sm">No customers added yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Campaign Management</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <input
+            type="text"
+            id="campaignName"
+            placeholder="Campaign Name"
+            class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+           <label for="campaignType" class="sr-only">Campaign Type</label>
+           <select id="campaignType" class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Campaign Type">
+              <option value="" disabled selected>Select Campaign Type</option>
+              <option value="Email">Email</option>
+              <option value="SMS">SMS</option>
+              <option value="Push">Push Notification</option>
+            </select>
+          <textarea
+            id="campaignContent"
+            placeholder="Campaign Content"
+            class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <label for="campaignSegment" class="sr-only">Target Segment</label>
+          <select id="campaignSegment" class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Target Segment">
+            <option value="" disabled selected>Select Target Segment</option>
+          </select>
+          <button id="addCampaign" class="bg-green-500 hover:bg-green-700 text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+            Add Campaign
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full leading-normal shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-gray-200 text-gray-700">
+              <tr>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">ID</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Name</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Type</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Content</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Segment</th>
+                <th class="px-5 py-3 border-b-2 border-gray-200 text-left text-xs font-semibold uppercase tracking-wider">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="campaignTableBody" class="bg-white">
+              <tr>
+                <td colspan="6" class="px-5 py-5 border-b border-gray-200 text-sm">No campaigns added yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Insights and Analytics</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div class="bg-indigo-100 rounded-md p-4">
+            <h3 class="text-lg font-semibold text-indigo-600">Total Customers</h3>
+            <p id="totalCustomers" class="text-xl font-bold text-gray-800">0</p>
+          </div>
+          <div class="bg-indigo-100 rounded-md p-4">
+            <h3 class="text-lg font-semibold text-indigo-600">Total Campaigns</h3>
+            <p id="totalCampaigns" class="text-xl font-bold text-gray-800">0</p>
+          </div>
+          <div class="bg-indigo-100 rounded-md p-4">
+            <h3 class="text-lg font-semibold text-indigo-600">Active Campaigns</h3>
+            <p id="activeCampaigns" class="text-xl font-bold text-gray-800">0</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">AI Insights</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="bg-purple-100 rounded-md p-4">
+            <h3 class="text-lg font-semibold text-purple-600">Customer Sentiment Analysis</h3>
+            <p id="customerSentiment" class="text-gray-700">No data available.</p>
+          </div>
+          <div class="bg-purple-100 rounded-md p-4">
+            <h3 class="text-lg font-semibold text-purple-600">Campaign Performance Prediction</h3>
+            <p id="campaignPrediction" class="text-gray-700">No data available.</p>
+          </div>
+        </div>
+        <div class="mt-4">
+          <button id="analyzeData" class="bg-blue-500 hover:bg-blue-700 text-white rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            Analyze Data
+          </button>
+        </div>
+      </section>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
